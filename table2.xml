@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<MLTable xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="xml/schemes/mltable.xsd">
+    <structure>
+        <globalStates k="0.5">
+            <state name="S3" value="avg(AverageMinDistBetweenAllCommissions) &gt;= 7.89 &amp;&amp; avg(WaitTime) &lt; 10 &amp;&amp; avg(AverageNumberOfComsWithinTimeWinOfAllCommissions) &lt; 4"/>
+            <state name="S10" value="avg(AverageMinDistBetweenAllCommissions) &lt; 2.63 &amp;&amp; avg(WaitTime) &gt;= 10 &amp;&amp; avg(AverageNumberOfComsWithinTimeWinOfAllCommissions) &gt;= 4"/>
+            <state name="S4" value="avg(AverageMinDistBetweenAllCommissions) &lt; 2.63 &amp;&amp; avg(WaitTime) &gt;= 10 &amp;&amp; avg(AverageNumberOfComsWithinTimeWinOfAllCommissions) &lt; 4"/>
+            <state name="S11" value="avg(AverageMinDistBetweenAllCommissions) &gt;= 2.63 &amp;&amp; avg(AverageMinDistBetweenAllCommissions) &lt; 7.89 &amp;&amp; avg(WaitTime) &gt;= 10 &amp;&amp; avg(AverageNumberOfComsWithinTimeWinOfAllCommissions) &gt;= 4"/>
+            <state name="S5" value="avg(AverageMinDistBetweenAllCommissions) &gt;= 2.63 &amp;&amp; avg(AverageMinDistBetweenAllCommissions) &lt; 7.89 &amp;&amp; avg(WaitTime) &gt;= 10 &amp;&amp; avg(AverageNumberOfComsWithinTimeWinOfAllCommissions) &lt; 4"/>
+            <state name="S6" value="avg(AverageMinDistBetweenAllCommissions) &gt;= 7.89 &amp;&amp; avg(WaitTime) &gt;= 10 &amp;&amp; avg(AverageNumberOfComsWithinTimeWinOfAllCommissions) &lt; 4"/>
+            <state name="S7" value="avg(AverageMinDistBetweenAllCommissions) &lt; 2.63 &amp;&amp; avg(WaitTime) &lt; 10 &amp;&amp; avg(AverageNumberOfComsWithinTimeWinOfAllCommissions) &gt;= 4"/>
+            <state name="S8" value="avg(AverageMinDistBetweenAllCommissions) &gt;= 2.63 &amp;&amp; avg(AverageMinDistBetweenAllCommissions) &lt; 7.89 &amp;&amp; avg(WaitTime) &lt; 10 &amp;&amp; avg(AverageNumberOfComsWithinTimeWinOfAllCommissions) &gt;= 4"/>
+            <state name="S9" value="avg(AverageMinDistBetweenAllCommissions) &gt;= 7.89 &amp;&amp; avg(WaitTime) &lt; 10 &amp;&amp; avg(AverageNumberOfComsWithinTimeWinOfAllCommissions) &gt;= 4"/>
+            <state name="S12" value="avg(AverageMinDistBetweenAllCommissions) &gt;= 7.89 &amp;&amp; avg(WaitTime) &gt;= 10 &amp;&amp; avg(AverageNumberOfComsWithinTimeWinOfAllCommissions) &gt;= 4"/>
+            <state name="S2" value="avg(AverageMinDistBetweenAllCommissions) &gt;= 2.63 &amp;&amp; avg(AverageMinDistBetweenAllCommissions) &lt; 7.89 &amp;&amp; avg(WaitTime) &lt; 10 &amp;&amp; avg(AverageNumberOfComsWithinTimeWinOfAllCommissions) &lt; 4"/>
+            <state name="S1" value="avg(AverageMinDistBetweenAllCommissions) &lt; 2.63 &amp;&amp; avg(WaitTime) &lt; 10 &amp;&amp; avg(AverageNumberOfComsWithinTimeWinOfAllCommissions) &lt; 4"/>
+        </globalStates>
+        <globalActions factor="0.9" function="2*_holonsCount/holonsCount+bestDist/dist+_costOfCommission/costOfCommission">
+            <action STDepth="0" choosingByCost="false" name="A2" simmulatedTrading="0"/>
+            <action STDepth="0" choosingByCost="true" name="A1" simmulatedTrading="0"/>
+            <action STDepth="0" choosingByCost="false" name="A4" simmulatedTrading="1"/>
+            <action STDepth="0" choosingByCost="true" name="A3" simmulatedTrading="1"/>
+            <action STDepth="3" choosingByCost="false" name="A6" simmulatedTrading="0"/>
+            <action STDepth="3" choosingByCost="true" name="A5" simmulatedTrading="0"/>
+            <action STDepth="3" choosingByCost="false" name="A8" simmulatedTrading="1"/>
+            <action STDepth="3" choosingByCost="true" name="A7" simmulatedTrading="1"/>
+            <action STDepth="8" choosingByCost="true" name="A11" simmulatedTrading="1"/>
+            <action STDepth="8" choosingByCost="true" name="A9" simmulatedTrading="0"/>
+            <action STDepth="8" choosingByCost="false" name="A10" simmulatedTrading="0"/>
+            <action STDepth="8" choosingByCost="false" name="A12" simmulatedTrading="1"/>
+        </globalActions>
+    </structure>
+    <content>
+        <globalTableContent>
+            <state name="S10">
+                <action name="A2" useCount="0" value="0.0"/>
+                <action name="A1" useCount="0" value="0.0"/>
+                <action name="A4" useCount="0" value="0.0"/>
+                <action name="A3" useCount="0" value="0.0"/>
+                <action name="A6" useCount="0" value="0.0"/>
+                <action name="A5" useCount="0" value="0.0"/>
+                <action name="A8" useCount="0" value="0.0"/>
+                <action name="A7" useCount="0" value="0.0"/>
+                <action name="A11" useCount="0" value="0.0"/>
+                <action name="A9" useCount="0" value="0.0"/>
+                <action name="A10" useCount="0" value="0.0"/>
+                <action name="A12" useCount="0" value="0.0"/>
+            </state>
+            <state name="S3">
+                <action name="A2" useCount="0" value="0.0"/>
+                <action name="A1" useCount="0" value="0.0"/>
+                <action name="A4" useCount="0" value="0.0"/>
+                <action name="A3" useCount="0" value="0.0"/>
+                <action name="A6" useCount="0" value="0.0"/>
+                <action name="A5" useCount="0" value="0.0"/>
+                <action name="A8" useCount="0" value="0.0"/>
+                <action name="A7" useCount="0" value="0.0"/>
+                <action name="A11" useCount="0" value="0.0"/>
+                <action name="A9" useCount="0" value="0.0"/>
+                <action name="A10" useCount="0" value="0.0"/>
+                <action name="A12" useCount="0" value="0.0"/>
+            </state>
+            <state name="S11">
+                <action name="A2" useCount="0" value="0.0"/>
+                <action name="A1" useCount="0" value="0.0"/>
+                <action name="A4" useCount="0" value="0.0"/>
+                <action name="A3" useCount="0" value="0.0"/>
+                <action name="A6" useCount="0" value="0.0"/>
+                <action name="A5" useCount="0" value="0.0"/>
+                <action name="A8" useCount="0" value="0.0"/>
+                <action name="A7" useCount="0" value="0.0"/>
+                <action name="A11" useCount="0" value="0.0"/>
+                <action name="A9" useCount="0" value="0.0"/>
+                <action name="A10" useCount="0" value="0.0"/>
+                <action name="A12" useCount="0" value="0.0"/>
+            </state>
+            <state name="S4">
+                <action name="A2" useCount="4" value="43.357511103220084"/>
+                <action name="A1" useCount="4" value="43.336010206127746"/>
+                <action name="A4" useCount="3" value="43.33273982654979"/>
+                <action name="A3" useCount="3" value="43.569765740395795"/>
+                <action name="A6" useCount="5" value="43.358422655879856"/>
+                <action name="A5" useCount="7" value="43.22983726990486"/>
+                <action name="A8" useCount="3" value="43.27170854993677"/>
+                <action name="A7" useCount="3" value="43.233033529291944"/>
+                <action name="A11" useCount="2" value="43.229393455221405"/>
+                <action name="A9" useCount="5" value="43.331559061180954"/>
+                <action name="A10" useCount="7" value="43.26488787009426"/>
+                <action name="A12" useCount="3" value="43.58333094502537"/>
+            </state>
+            <state name="S5">
+                <action name="A2" useCount="0" value="0.0"/>
+                <action name="A1" useCount="0" value="0.0"/>
+                <action name="A4" useCount="0" value="0.0"/>
+                <action name="A3" useCount="0" value="0.0"/>
+                <action name="A6" useCount="0" value="0.0"/>
+                <action name="A5" useCount="0" value="0.0"/>
+                <action name="A8" useCount="0" value="0.0"/>
+                <action name="A7" useCount="0" value="0.0"/>
+                <action name="A11" useCount="0" value="0.0"/>
+                <action name="A9" useCount="0" value="0.0"/>
+                <action name="A10" useCount="0" value="0.0"/>
+                <action name="A12" useCount="0" value="0.0"/>
+            </state>
+            <state name="S6">
+                <action name="A2" useCount="0" value="0.0"/>
+                <action name="A1" useCount="0" value="0.0"/>
+                <action name="A4" useCount="0" value="0.0"/>
+                <action name="A3" useCount="0" value="0.0"/>
+                <action name="A6" useCount="0" value="0.0"/>
+                <action name="A5" useCount="0" value="0.0"/>
+                <action name="A8" useCount="0" value="0.0"/>
+                <action name="A7" useCount="0" value="0.0"/>
+                <action name="A11" useCount="0" value="0.0"/>
+                <action name="A9" useCount="0" value="0.0"/>
+                <action name="A10" useCount="0" value="0.0"/>
+                <action name="A12" useCount="0" value="0.0"/>
+            </state>
+            <state name="S7">
+                <action name="A2" useCount="0" value="0.0"/>
+                <action name="A1" useCount="0" value="0.0"/>
+                <action name="A4" useCount="0" value="0.0"/>
+                <action name="A3" useCount="0" value="0.0"/>
+                <action name="A6" useCount="0" value="0.0"/>
+                <action name="A5" useCount="0" value="0.0"/>
+                <action name="A8" useCount="0" value="0.0"/>
+                <action name="A7" useCount="0" value="0.0"/>
+                <action name="A11" useCount="0" value="0.0"/>
+                <action name="A9" useCount="0" value="0.0"/>
+                <action name="A10" useCount="0" value="0.0"/>
+                <action name="A12" useCount="0" value="0.0"/>
+            </state>
+            <state name="S8">
+                <action name="A2" useCount="0" value="0.0"/>
+                <action name="A1" useCount="0" value="0.0"/>
+                <action name="A4" useCount="0" value="0.0"/>
+                <action name="A3" useCount="0" value="0.0"/>
+                <action name="A6" useCount="0" value="0.0"/>
+                <action name="A5" useCount="0" value="0.0"/>
+                <action name="A8" useCount="0" value="0.0"/>
+                <action name="A7" useCount="0" value="0.0"/>
+                <action name="A11" useCount="0" value="0.0"/>
+                <action name="A9" useCount="0" value="0.0"/>
+                <action name="A10" useCount="0" value="0.0"/>
+                <action name="A12" useCount="0" value="0.0"/>
+            </state>
+            <state name="S12">
+                <action name="A2" useCount="0" value="0.0"/>
+                <action name="A1" useCount="0" value="0.0"/>
+                <action name="A4" useCount="0" value="0.0"/>
+                <action name="A3" useCount="0" value="0.0"/>
+                <action name="A6" useCount="0" value="0.0"/>
+                <action name="A5" useCount="0" value="0.0"/>
+                <action name="A8" useCount="0" value="0.0"/>
+                <action name="A7" useCount="0" value="0.0"/>
+                <action name="A11" useCount="0" value="0.0"/>
+                <action name="A9" useCount="0" value="0.0"/>
+                <action name="A10" useCount="0" value="0.0"/>
+                <action name="A12" useCount="0" value="0.0"/>
+            </state>
+            <state name="S9">
+                <action name="A2" useCount="0" value="0.0"/>
+                <action name="A1" useCount="0" value="0.0"/>
+                <action name="A4" useCount="0" value="0.0"/>
+                <action name="A3" useCount="0" value="0.0"/>
+                <action name="A6" useCount="0" value="0.0"/>
+                <action name="A5" useCount="0" value="0.0"/>
+                <action name="A8" useCount="0" value="0.0"/>
+                <action name="A7" useCount="0" value="0.0"/>
+                <action name="A11" useCount="0" value="0.0"/>
+                <action name="A9" useCount="0" value="0.0"/>
+                <action name="A10" useCount="0" value="0.0"/>
+                <action name="A12" useCount="0" value="0.0"/>
+            </state>
+            <state name="S2">
+                <action name="A2" useCount="0" value="0.0"/>
+                <action name="A1" useCount="0" value="0.0"/>
+                <action name="A4" useCount="0" value="0.0"/>
+                <action name="A3" useCount="0" value="0.0"/>
+                <action name="A6" useCount="0" value="0.0"/>
+                <action name="A5" useCount="0" value="0.0"/>
+                <action name="A8" useCount="0" value="0.0"/>
+                <action name="A7" useCount="0" value="0.0"/>
+                <action name="A11" useCount="0" value="0.0"/>
+                <action name="A9" useCount="0" value="0.0"/>
+                <action name="A10" useCount="0" value="0.0"/>
+                <action name="A12" useCount="0" value="0.0"/>
+            </state>
+            <state name="S1">
+                <action name="A2" useCount="0" value="0.0"/>
+                <action name="A1" useCount="0" value="0.0"/>
+                <action name="A4" useCount="0" value="0.0"/>
+                <action name="A3" useCount="0" value="0.0"/>
+                <action name="A6" useCount="0" value="0.0"/>
+                <action name="A5" useCount="0" value="0.0"/>
+                <action name="A8" useCount="0" value="0.0"/>
+                <action name="A7" useCount="0" value="0.0"/>
+                <action name="A11" useCount="1" value="43.63286693601383"/>
+                <action name="A9" useCount="1" value="43.26958402202136"/>
+                <action name="A10" useCount="1" value="30.430265388834044"/>
+                <action name="A12" useCount="0" value="0.0"/>
+            </state>
+        </globalTableContent>
+    </content>
+</MLTable>

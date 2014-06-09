@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="DispatchRider" default="jar" basedir=".">
+
+	<property name="source" value="src" />
+	<property name="jarDir" value="jar" />
+	<property name="package" value="pl.edu.agh.agents.dtp" />
+	<property name="lib" value="./jar/lib" />
+
+	<target name="classes">
+		<mkdir dir="bin" />
+		<javac srcdir="${source}" destdir="bin">
+			<classpath>
+				<dirset dir="${source}" />
+				<filelist dir="${lib}">
+					<file name="jade.jar" />
+					<file name="jadeTools.jar" />
+					<file name="jadeSecurity.jar" />
+					<file name="Base64.jar" />
+					<file name="log4j-1.2.12.jar" />
+					<file name="looks-1.3.2.jar" />
+					<file name="jfreechart-1.0.4.jar"/>
+				</filelist>
+			</classpath>
+		</javac>
+	</target>
+
+	<target name="jar" depends="classes">
+		<jar destfile="${jarDir}/DTP.jar" basedir="bin">
+			<zipgroupfileset includes="**/*.jar" dir="jar/lib"/>
+			<manifest>
+				<attribute name="Main-Class" value="jade.Boot" />
+				<attribute name="Class-Path" value="DTP.jar ./lib/jade.jar ./lib/jadeTools.jar ./lib/jadeSecurity.jar ./lib/Base64.jar ./lib/log4j-1.2.12.jar ./lib/looks-1.3.2.jar" />
+			</manifest>
+		</jar>
+	</target>
+
+
+</project>
