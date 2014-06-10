@@ -1,53 +1,37 @@
 package algorithm.AdaptiveLargeNeighbourhoodSearch;
 
-import java.util.Random;
-
-import algorithm.AdaptiveLargeNeighbourhoodSearch.insert.GreedyInsert;
-import algorithm.AdaptiveLargeNeighbourhoodSearch.insert.GreedyPerturbedInsert;
+import util.selector.RandomItemSelector;
 import algorithm.AdaptiveLargeNeighbourhoodSearch.insert.InsertMethod;
-import algorithm.AdaptiveLargeNeighbourhoodSearch.insert.RegretInsert;
-import algorithm.AdaptiveLargeNeighbourhoodSearch.removal.RandomRemoval;
+import algorithm.AdaptiveLargeNeighbourhoodSearch.insert.item.GreedyInsertItem;
+import algorithm.AdaptiveLargeNeighbourhoodSearch.insert.item.GreedyPerturbedInsertItem;
+import algorithm.AdaptiveLargeNeighbourhoodSearch.insert.item.RegretInsertItem;
 import algorithm.AdaptiveLargeNeighbourhoodSearch.removal.RemovalMethod;
-import algorithm.AdaptiveLargeNeighbourhoodSearch.removal.ShawRemoval;
-import algorithm.AdaptiveLargeNeighbourhoodSearch.removal.WorstRemoval;
+import algorithm.AdaptiveLargeNeighbourhoodSearch.removal.item.RandomRemovalItem;
+import algorithm.AdaptiveLargeNeighbourhoodSearch.removal.item.ShawRemovalItem;
+import algorithm.AdaptiveLargeNeighbourhoodSearch.removal.item.WorstRemovalItem;
 
 public class RouletteWheel {
 
-	private static final int NUMER_OF_ALGORITHMS = 3;
+	private static RandomItemSelector<InsertMethod> insertMethodSelector = new RandomItemSelector<InsertMethod>();
 
-	private static final int REGRET = 0;
+	private static RandomItemSelector<RemovalMethod> removalMethodSelector = new RandomItemSelector<RemovalMethod>();
 
-	private static final int GREEDY = 1;
+	static {
+		insertMethodSelector.addItem(new RegretInsertItem(2));
+		insertMethodSelector.addItem(new GreedyInsertItem(1));
+		insertMethodSelector.addItem(new GreedyPerturbedInsertItem(1));
 
-	private static final int GREEDY_PERTURBED = 2;
+		removalMethodSelector.addItem(new ShawRemovalItem(6));
+		removalMethodSelector.addItem(new WorstRemovalItem(2));
+		removalMethodSelector.addItem(new RandomRemovalItem(2));
+	}
 
 	public static InsertMethod getInsertMethod() {
-		Random random = new Random();
-		int algorithmNumber = random.nextInt(NUMER_OF_ALGORITHMS);
-
-		switch (algorithmNumber) {
-		case REGRET:
-			return new RegretInsert();
-		case GREEDY:
-			return new GreedyInsert();
-		case GREEDY_PERTURBED:
-			return new GreedyPerturbedInsert();
-		default:
-			return null;
-		}
-
+		return insertMethodSelector.getRandomItem();
 	}
 
 	public static RemovalMethod getRemovalMethod() {
-		Random r = new Random();
-		int y = r.nextInt(10);
-		if (y < 7)
-			return new ShawRemoval();
-		else if (y < 9)
-			return new WorstRemoval();
-		else
-			return new RandomRemoval();
-
+		return removalMethodSelector.getRandomItem();
 	}
 
 }

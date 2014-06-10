@@ -1,4 +1,4 @@
-package algorithm.AdaptiveLargeNeighbourhoodSearch.removal;
+package algorithm.AdaptiveLargeNeighbourhoodSearch.removal.method;
 
 import jade.core.AID;
 
@@ -11,6 +11,7 @@ import java.util.Random;
 
 import algorithm.Helper;
 import algorithm.Schedule;
+import algorithm.AdaptiveLargeNeighbourhoodSearch.removal.RemovalMethod;
 import dtp.commission.Commission;
 
 public class WorstRemoval implements RemovalMethod{

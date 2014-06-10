@@ -1,4 +1,4 @@
-package algorithm.AdaptiveLargeNeighbourhoodSearch.insert;
+package algorithm.AdaptiveLargeNeighbourhoodSearch.insert.method;
 
 import jade.core.AID;
 
@@ -8,6 +8,7 @@ import java.util.Map;
 
 import algorithm.Algorithm;
 import algorithm.Schedule;
+import algorithm.AdaptiveLargeNeighbourhoodSearch.insert.InsertMethod;
 import dtp.commission.Commission;
 import dtp.jade.algorithm.agent.AlgorithmAgentParent;
 
