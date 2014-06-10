@@ -33,6 +33,7 @@ public class ALNSTrading extends ExchangeAlgorithm  {
 			iterations = Integer.parseInt(parameters.get("iterations"));
 		if (parameters.containsKey("search"))
 			searchRange = Integer.parseInt(parameters.get("search"));
+		System.err.println("Iterations: " + iterations + " Search range: " + searchRange);
 		return AdaptiveLargeNeighbourhoodTrading.LNSTrading(aids, holons, info, iterations , searchRange, agent, timestamp);
 	}
 
