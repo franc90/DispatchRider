@@ -2,6 +2,7 @@ package algorithm.AdaptiveLargeNeighbourhoodSearch;
 
 import util.selector.RandomItemSelector;
 import algorithm.AdaptiveLargeNeighbourhoodSearch.insert.InsertMethod;
+import algorithm.AdaptiveLargeNeighbourhoodSearch.insert.item.GreedyForbiddenInsertItem;
 import algorithm.AdaptiveLargeNeighbourhoodSearch.insert.item.GreedyInsertItem;
 import algorithm.AdaptiveLargeNeighbourhoodSearch.insert.item.GreedyPerturbedInsertItem;
 import algorithm.AdaptiveLargeNeighbourhoodSearch.insert.item.RegretInsertItem;
@@ -17,13 +18,14 @@ public class RouletteWheel {
 	private static RandomItemSelector<RemovalMethod> removalMethodSelector = new RandomItemSelector<RemovalMethod>();
 
 	static {
-		insertMethodSelector.addItem(new RegretInsertItem(2));
+		insertMethodSelector.addItem(new RegretInsertItem(3));
 		insertMethodSelector.addItem(new GreedyInsertItem(1));
 		insertMethodSelector.addItem(new GreedyPerturbedInsertItem(1));
+		insertMethodSelector.addItem(new GreedyForbiddenInsertItem(1));
 
-		removalMethodSelector.addItem(new ShawRemovalItem(6));
-		removalMethodSelector.addItem(new WorstRemovalItem(2));
-		removalMethodSelector.addItem(new RandomRemovalItem(2));
+		removalMethodSelector.addItem(new ShawRemovalItem(3));
+		removalMethodSelector.addItem(new WorstRemovalItem(1));
+		removalMethodSelector.addItem(new RandomRemovalItem(1));
 	}
 
 	public static InsertMethod getInsertMethod() {

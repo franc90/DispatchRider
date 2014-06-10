@@ -22,9 +22,14 @@ public class RandomRemoval implements RemovalMethod {
 		List<Commission> commissions = new ArrayList<Commission>();
 
 		// Get random request from whole solution and add it to final result
-		for (AID a : holons.keySet())
-			for (Commission c : holons.get(a).getCommissions())
+		for (AID aid : holons.keySet()) {
+			Schedule schedule = holons.get(aid);
+			for (Commission c : schedule.getCommissions()) {
+				c.setOldSchedule(schedule);
 				commissions.add(c);
+			}
+		}
+
 		if (commissions.size() < 10) {
 			return null;
 		}

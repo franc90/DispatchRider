@@ -4,6 +4,8 @@ import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 
+import algorithm.Schedule;
+
 public class Commission implements Serializable, Comparable<Commission> {
 
 	private static final long serialVersionUID = 1L;
@@ -39,6 +41,8 @@ public class Commission implements Serializable, Comparable<Commission> {
 	private double actualLoad;
 
 	private boolean isPickup;
+
+	private Schedule oldSchedule;
 
 	private Map<String, Double> punishmentFunParamsPickup = new HashMap<String, Double>();
 	private Map<String, Double> punishmentFunParamsDelivery = new HashMap<String, Double>();
@@ -263,6 +267,14 @@ public class Commission implements Serializable, Comparable<Commission> {
 	public int getLoad() {
 
 		return load;
+	}
+
+	public Schedule getOldSchedule() {
+		return oldSchedule;
+	}
+
+	public void setOldSchedule(Schedule oldSchedule) {
+		this.oldSchedule = oldSchedule;
 	}
 
 	public void printCommision() {

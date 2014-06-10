@@ -39,10 +39,10 @@ public class ShawRemoval implements RemovalMethod {
 		List<Commission> commissions = new ArrayList<Commission>();
 		
 		//Get all commissions other than current and put them into commissions
-		for (AID a  : holons.keySet()) 
-		{
-			for (Commission c : holons.get(a).getCommissions())
-			{
+		for (AID aid : holons.keySet()) {
+			Schedule schedule = holons.get(aid);
+			for (Commission c : schedule.getCommissions()) {
+				c.setOldSchedule(schedule);
 				commissions.add(c);
 			}
 		}
@@ -79,6 +79,7 @@ public class ShawRemoval implements RemovalMethod {
 			while (canBe == false)
 			{
 				comm = sched.getCommission(r.nextInt(sched.getCommissions().size()));
+				comm.setOldSchedule(sched);
 						
 				for (Commission c : commissions)
 				{	
