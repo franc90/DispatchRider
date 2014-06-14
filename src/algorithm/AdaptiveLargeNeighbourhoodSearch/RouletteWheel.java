@@ -8,7 +8,10 @@ import algorithm.AdaptiveLargeNeighbourhoodSearch.insert.item.GreedyPerturbedIns
 import algorithm.AdaptiveLargeNeighbourhoodSearch.insert.item.RegretInsertItem;
 import algorithm.AdaptiveLargeNeighbourhoodSearch.removal.RemovalMethod;
 import algorithm.AdaptiveLargeNeighbourhoodSearch.removal.item.RandomRemovalItem;
-import algorithm.AdaptiveLargeNeighbourhoodSearch.removal.item.ShawRemovalItem;
+import algorithm.AdaptiveLargeNeighbourhoodSearch.removal.item.ShawRemovalBalancedItem;
+import algorithm.AdaptiveLargeNeighbourhoodSearch.removal.item.ShawRemovalDistanceItem;
+import algorithm.AdaptiveLargeNeighbourhoodSearch.removal.item.ShawRemovalTimeItem;
+import algorithm.AdaptiveLargeNeighbourhoodSearch.removal.item.ShawRemovalCapacityItem;
 import algorithm.AdaptiveLargeNeighbourhoodSearch.removal.item.WorstRemovalItem;
 
 public class RouletteWheel {
@@ -23,7 +26,10 @@ public class RouletteWheel {
 		insertMethodSelector.addItem(new GreedyPerturbedInsertItem(1));
 		insertMethodSelector.addItem(new GreedyForbiddenInsertItem(1));
 
-		removalMethodSelector.addItem(new ShawRemovalItem(3));
+		removalMethodSelector.addItem(new ShawRemovalBalancedItem(3));
+		removalMethodSelector.addItem(new ShawRemovalTimeItem(2));
+		removalMethodSelector.addItem(new ShawRemovalDistanceItem(2));
+		removalMethodSelector.addItem(new ShawRemovalCapacityItem(2));
 		removalMethodSelector.addItem(new WorstRemovalItem(1));
 		removalMethodSelector.addItem(new RandomRemovalItem(1));
 	}

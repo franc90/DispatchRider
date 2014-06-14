@@ -12,9 +12,11 @@
         	<truck power="600" reliability="4" comfort="4" fuelConsumption="20"/>
         	<trailer mass="200" capacity="200" cargoType="1" universality="4"/>
         </defaultAgents>
-        <configuration>tmp_tests/25_200</configuration>
-        <results>tmp_tests/lc101</results>
+        <configuration>agenty_testy/25_200</configuration>
+        <results>agenty_testy/lc101_alns/lc101</results>
 		<exchangeAlgorithmAfterComAdd name="ALNSTrading">
+			<param name="iterations" value="200"/>
+			<param name="search" value="15"/>
 			<param name="events" value="1"/>
 		</exchangeAlgorithmAfterComAdd>
 		<exchangeAlgorithmWhenCantAddCom name="ALNSTrading" />
