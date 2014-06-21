@@ -29,12 +29,15 @@ public class ALNSTrading extends ExchangeAlgorithm  {
 		//defaults
 		int iterations = 100;
 		int searchRange = 20;
+		String selectionAlgorithm = "random";
 		if (parameters.containsKey("iterations"))
 			iterations = Integer.parseInt(parameters.get("iterations"));
 		if (parameters.containsKey("search"))
 			searchRange = Integer.parseInt(parameters.get("search"));
+		if (parameters.containsKey("selectionAlgorithm"))
+			selectionAlgorithm = parameters.get("selectionAlgorithm");
 		System.err.println("Iterations: " + iterations + " Search range: " + searchRange);
-		return AdaptiveLargeNeighbourhoodTrading.LNSTrading(aids, holons, info, iterations , searchRange, agent, timestamp);
+		return AdaptiveLargeNeighbourhoodTrading.LNSTrading(aids, holons, info, iterations , searchRange, agent, timestamp, selectionAlgorithm);
 	}
 
 	@Override

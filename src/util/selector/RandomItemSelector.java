@@ -1,37 +1,24 @@
 package util.selector;
 
-import java.util.LinkedList;
-import java.util.List;
 import java.util.Random;
 
-public class RandomItemSelector<T> {
-
-	private List<Item<T>> items = new LinkedList<Item<T>>();
+public class RandomItemSelector<T> extends ItemSelector<T>{
 
 	private Random random = new Random();
 
-	private int totalProbabilitiesSum = 0;
-
 	public void addItem(Item<T> item) {
-		totalProbabilitiesSum += item.getRelativeProbability();
-		items.add(item);
+		super.addItem(item);
 	}
 
 	/**
-	 * Select random {@link Item} with relative probability.
+	 * Select random {@link Item}.
 	 * 
 	 * @return {@link Item}
 	 */
-	public T getRandomItem() {
-		int index = random.nextInt(totalProbabilitiesSum) + 1;
-		int sum = 0;
-		int i = 0;
+	@Override
+	public Item<T> getItem() {
+		Item<T> selectedItem = items.get(random.nextInt(items.size()));
 
-		while (sum < index) {
-			sum += items.get(i++).getRelativeProbability();
-		}
-		Item<T> selectedItem = items.get(i - 1);
-
-		return selectedItem.getIncludedValue();
+		return selectedItem;
 	}
 }

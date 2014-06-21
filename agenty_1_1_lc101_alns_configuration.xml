@@ -15,6 +15,7 @@
         <configuration>agenty_testy/25_200</configuration>
         <results>agenty_testy/lc101_alns/lc101</results>
 		<exchangeAlgorithmAfterComAdd name="ALNSTrading">
+			<param name="selectionAlgorithm" value="learning"/>
 			<param name="iterations" value="200"/>
 			<param name="search" value="15"/>
 			<param name="events" value="1"/>
