@@ -10,21 +10,6 @@ public class RandomItemSelector<T> extends ItemSelector<T>{
 		super.addItem(item);
 	}
 
-	public void removeItem(Item<T> item) {
-		if (items.remove(item)) {
-			totalProbabilitiesSum -= item.getRelativeProbability();
-		}
-	}
-
-	public void clearItems() {
-		totalProbabilitiesSum = 0;
-		items.clear();
-	}
-
-	public List<Item<T>> getItems() {
-		return items;
-	}
-
 	/**
 	 * Select random {@link Item}.
 	 * 
